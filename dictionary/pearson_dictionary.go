@@ -17,18 +17,25 @@ type PearsonDictionary struct {
 
 // NewPearsonDictionaryDefault creates a new dictionary using the Pearson api and the Longman Dictionary of Contemporary English (5th edition)
 func NewPearsonDictionaryDefault() *PearsonDictionary {
-	return &PearsonDictionary {
-		endpoint: "http://api.pearson.com/v2/dictionaries",
+
+	dict := &PearsonDictionary {
 		activeDictionary: "ldoce5",
 	}
+
+	dict.endpoint = fmt.Sprintf("http://api.pearson.com/v2/dictionaries/%s/entries", dict.activeDictionary)
+
+	return dict
 }
 
 // NewPearsonDictionaryCustom creates a new dictionary using the provided endpoint and dictionary code while conforming to the Pearson API
 func NewPearsonDictionaryCustom(baseEndpoint, dictionaryCode string) *PearsonDictionary {
-	return &PearsonDictionary {
-		endpoint: baseEndpoint,
+	dict := &PearsonDictionary {
 		activeDictionary: dictionaryCode,
 	}
+	
+	dict.endpoint = fmt.Sprintf("%s/%s/entries", baseEndpoint, dict.activeDictionary)
+
+	return dict
 }
 
 // DefineWord gets all definitions of a word from the Pearson Dictionary API
@@ -90,8 +97,7 @@ func (p *PearsonDictionary) DefineWord(word string) ([]string, error) {
 
 func (p *PearsonDictionary) constructDefineWordURL(word string) (string, error) {
 	var err error
-	URL := fmt.Sprintf("%s/%s/entries", p.endpoint, p.activeDictionary)
-	baseURL, err := url.Parse(URL)
+	baseURL, err := url.Parse(p.endpoint)
 
 	if err == nil {
 		queryParams := url.Values{}
