@@ -60,7 +60,7 @@ func main() {
 			}
 
 			if err != nil {
-				fmt.Fprintf(w, "Hello, %q", html.EscapeString(err.Error()))
+				fmt.Fprintf(w, "%q", html.EscapeString(err.Error()))
 			} else {
 				fmt.Fprintf(w, "%s", output)
 			}
@@ -85,58 +85,5 @@ func main() {
 			log.Println(fmt.Sprintf("Captured %v. Exiting...", s))
 			os.Exit(0)
 		}
-}
-
-	// api := dictionary.NewPearsonDictionaryDefault()
-	
-	// fileName := flag.String("f", "/usr/bin/test.txt", "File to parse")
-	// flag.Parse()
-
-	// buf, err := ioutil.ReadFile(*fileName)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// tok := tokenizer.NewEnglish(string(buf))
-
-	// words := tok.GetTokens()
-
-	// uniqueWords := make(map[string][]string)
-
-	// for _, word := range words {
-	// 	uniqueWords[strings.ToLower(word)] = nil
-	// }
-
-	// for word := range uniqueWords {
-	// 	fmt.Printf("Looking up definition for %s...\n", word)
-	// 	def, err := api.DefineWord(word)
-	// 	if err != nil {
-	// 		fmt.Println(err)
-	// 	} else {
-	// 		uniqueWords[word] = def
-	// 	}
-	// }
-	
-	// fmt.Println("")
-
-	// wordsWithNoDefinition := make([]string, 1)
-
-	// for word, definitions := range uniqueWords {
-	// 	if len(definitions) != 0 {
-	// 		fmt.Printf("%s\n", word)
-	// 		for _, def := range definitions {
-	// 			fmt.Printf("---> %s\n", def)
-	// 		}
-	// 	} else {
-	// 		wordsWithNoDefinition = append(wordsWithNoDefinition, word)
-	// 	}
-	// }
-
-	// if len(wordsWithNoDefinition) != 0 {
-	// 	fmt.Println("\nCould not find definitions for these words:")
-
-	// 	for _, word := range wordsWithNoDefinition {
-	// 		fmt.Println(word)
-	// 	}
-	// }
+	}
 }
