@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
+<script>
+function onSuccess(data, textStatus, jqXHR ) {
+    document.getElementById("outputTextArea").value = JSON.stringify(data);
+}
+
+function onSubmit() {
+    var inputTextArea = document.getElementById("inputTextArea");
+
+    $.ajax({
+        type: "POST",
+        url: "api/define",
+        data: inputTextArea.value,
+        success: onSuccess,
+        dataType: "json"
+    });
+}
+</script>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body>
+Content of the document......
+</body>
+
+<br/>
+<textarea id="inputTextArea" cols="25" rows="7"></textarea> 
+<br/>
+<input type="button" value="Submit now" onclick="onSubmit()"/>
+<br/>
+<textarea id="outputTextArea" cols="80" rows="100">
+</textarea>
+
+</html>

@@ -65,6 +65,7 @@ func main() {
 				fmt.Fprintf(w, "%s", output)
 			}
 		})
+		http.Handle("/", http.FileServer(http.Dir("./static")))
 
 		log.Println("Starting server...")
 		log.Printf("HTTP service listening on %s", *httpAddr)
