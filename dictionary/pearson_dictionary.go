@@ -84,12 +84,6 @@ func (p *PearsonDictionary) DefineWord(word string) ([]string, error) {
 		// Save the data
 		if err == nil {
 			p.cachedResults[word] = parsedResult
-
-			if _, ok := p.cachedResults[word]; ok {
-				fmt.Println("Word cached correctly")
-			} else {
-				fmt.Println("Failed to cache word")
-			}
 		}
 
 		// Ensure results were returned
