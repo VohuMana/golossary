@@ -2,9 +2,22 @@
 <html>
 <head>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script>
 function onSuccess(data, textStatus, jqXHR ) {
-    document.getElementById("outputTextArea").value = JSON.stringify(data);
+    // document.getElementById("outputTextArea").value = JSON.stringify(data);
+    for (var word in data) {
+        if (data[word] !== null) {
+            var newDiv = document.createElement('div');
+            var header = document.createElement('h3');
+            var definition = document.createElement('p');
+            header.innerHTML = word;
+            definition.innerHTML = data[word];
+            newDiv.appendChild(header);
+            newDiv.appendChild(definition);
+            document.body.appendChild(newDiv);
+        }
+    }
 }
 
 function onSubmit() {
@@ -24,15 +37,15 @@ function onSubmit() {
 </head>
 
 <body>
-Content of the document......
+Enter your text you want to define here:
 </body>
 
 <br/>
-<textarea id="inputTextArea" cols="25" rows="7"></textarea> 
+<textarea id="inputTextArea" cols="75" rows="7"></textarea> 
 <br/>
 <input type="button" value="Submit now" onclick="onSubmit()"/>
 <br/>
-<textarea id="outputTextArea" cols="80" rows="100">
+<!--<textarea id="outputTextArea" cols="80" rows="100">-->
 </textarea>
 
 </html>

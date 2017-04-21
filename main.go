@@ -17,8 +17,7 @@ import (
 	"github.com/vohumana/golossary/tokenizer"
 )
 
-func getJSONDefinitions(input string) (string, error) {
-	api := dictionary.NewPearsonDictionaryDefault()
+func getJSONDefinitions(input string, api dictionary.Dictionary) (string, error) {
 	tok := tokenizer.NewEnglish(input)
 	words := tok.GetTokens()
 	uniqueWords := make(map[string][]string)
@@ -47,6 +46,8 @@ func main() {
 	)
 	flag.Parse()
 
+	api := dictionary.NewPearsonDictionaryDefault()
+
 	// Use a buffered error channel so that handlers can
 	// keep processing after throwing errors.
 	errChan := make(chan error, 10)
@@ -56,7 +57,7 @@ func main() {
 			buf, err := ioutil.ReadAll(r.Body)
 
 			if err == nil {
-				output, err = getJSONDefinitions(string(buf))
+				output, err = getJSONDefinitions(string(buf), api)
 			}
 
 			if err != nil {
