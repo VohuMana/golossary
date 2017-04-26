@@ -5,7 +5,6 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script>
 function onSuccess(data, textStatus, jqXHR ) {
-    // document.getElementById("outputTextArea").value = JSON.stringify(data);
     for (var word in data) {
         if (data[word] !== null) {
             var newDiv = document.createElement('div');
@@ -45,7 +44,6 @@ Enter your text you want to define here:
 <br/>
 <input type="button" value="Submit now" onclick="onSubmit()"/>
 <br/>
-<!--<textarea id="outputTextArea" cols="80" rows="100">-->
 </textarea>
 
 </html>

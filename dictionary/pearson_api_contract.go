@@ -1,8 +1,5 @@
 package dictionary
 
-import (
-)
-
 type PearsonSensesContract struct {
 	Definition []string `json:"definition"`
 }
