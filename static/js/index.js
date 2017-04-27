@@ -8,7 +8,7 @@ function onSuccess(data, textStatus, jqXHR ) {
             definition.innerHTML = data[word];
             newDiv.appendChild(header);
             newDiv.appendChild(definition);
-            document.body.appendChild(newDiv);
+            document.getElementById("mainContainer").appendChild(newDiv);
         }
     }
 }
