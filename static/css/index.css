@@ -1,18 +1,11 @@
 body {
-  padding-top: 50px;
-  background: red;
+  margin-top: 30px;
 }
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 
-.container {
-    background: grey;
-}
-
-.definition {
-    background: green;
-    border-style: solid;
-    border-width: 1px;
+.btn-spacing {
+  margin-top: 3px;
 }

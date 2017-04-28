@@ -1,27 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/index.js"></script>
-<meta charset="UTF-8">
-<title>Title of the document</title>
-</head>
-
-<body>
-Enter your text you want to define here:
-</body>
-
-<br/>
-<textarea id="inputTextArea" cols="75" rows="7"></textarea> 
-<br/>
-<input type="button" value="Submit now" onclick="onSubmit()"/>
-<br/>
-</textarea>
-
-</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -71,9 +47,8 @@ Enter your text you want to define here:
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -82,21 +57,20 @@ Enter your text you want to define here:
     <div id="mainContainer" class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Golossary</h1>
+        <p class="lead">Get definitions for multiple words at one time.<br/>  Note: It can take 30s - 1min to return a result.</p>
       </div>
-
-    <div class="definition">
-        <h1>Hello</h1>
-        <p class="lead">This is the definition for the word hello.  Usually found before World in most programming circles</p>
-    </div>
-
+    
     <textarea id="inputTextArea" class="form-control" rows="10" placeholder="Type or paste the text you want to define here..."></textarea>
-    <button type="button" class="btn btn-primary" onclick="onSubmit()">Submit</button>
+    <button type="button" class="btn btn-primary btn-spacing" onclick="onSubmit()">Submit</button>
 
     </div><!-- /.container -->
 
-    
+    <div id="definitionContainer" class="container">
+    </div>
+
+    <div id="missingDefinitionsContainer" class="container">
+    </div>
 
 
     <!-- Bootstrap core JavaScript
