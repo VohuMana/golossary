@@ -42,7 +42,7 @@ func getJSONDefinitions(input string, api dictionary.Dictionary) (string, error)
 
 func main() {
 	var (
-		httpAddr = flag.String("http", ":80", "HTTP service address.")
+		httpAddr = flag.String("http", "0.0.0.0:80", "HTTP service address.")
 	)
 	flag.Parse()
 
