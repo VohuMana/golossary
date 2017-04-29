@@ -9,3 +9,8 @@ body {
 .btn-spacing {
   margin-top: 3px;
 }
+
+.about-container {
+  padding: 40px 15px;
+  text-align: left;
+}

@@ -29,33 +29,27 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="about.html">About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div id="mainContainer" class="container">
-
-      <div class="starter-template">
-        <h1>Golossary</h1>
-        <p class="lead">Get definitions for multiple words at one time.<br/>  Note: It can take 30s - 1min to return a result.</p>
+      <div class="about-container">
+        <h2>About</h2>
+        <p>Golossary is a small web app I created to learn a bit more about Golang and Docker.  The idea came to me when I was looking up a lot of words in an article and thought it would be easier if I could just paste the article text into a single place and generate a glossary, thus Golossary was born.</p>
+        <h4>Currently supported dictionaries</h3>
+        <ul><li>
+        Pearson <a href='http://developer.pearson.com/apis/dictionaries#/'>http://developer.pearson.com/apis/dictionaries#/</a></li>
+        </ul>
+        <h4>Issues</h3>
+        <p>Report any issues to <a href='https://github.com/VohuMana/golossary/issues'>https://github.com/VohuMana/golossary/issues</a>, I am busy with other projects but if I have time to fix things I will.</p>
       </div>
-    
-    <textarea id="inputTextArea" class="form-control" rows="10" placeholder="Type or paste the text you want to define here..."></textarea>
-    <button type="button" class="btn btn-primary btn-spacing" onclick="onSubmit()">Submit</button>
-
     </div><!-- /.container -->
 
-    <div id="definitionContainer" class="container">
-    </div>
-
-    <div id="missingDefinitionsContainer" class="container">
-    </div>
-    
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/index_min.js"></script>
   </body>
 </html>
